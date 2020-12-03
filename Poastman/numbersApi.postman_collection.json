@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "08c07890-f638-4002-929a-41d9cdb5b9ac",
+		"name": "numbersApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Random",
+			"item": [
+				{
+					"name": "triviaRandom",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2714ab83-bc93-4564-8249-bd6f88008b9c",
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/:number/:key",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								":number",
+								":key"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "random"
+								},
+								{
+									"key": "key",
+									"value": "trivia"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dateRandom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/:number/:key",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								":number",
+								":key"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "random"
+								},
+								{
+									"key": "key",
+									"value": "date"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "yearRandom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/:number/:key",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								":number",
+								":key"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "random"
+								},
+								{
+									"key": "key",
+									"value": "year"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mathRandom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/:number/:key",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								":number",
+								":key"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "random"
+								},
+								{
+									"key": "key",
+									"value": "math"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "nonRandom",
+			"item": [
+				{
+					"name": "trivia",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d068c164-3429-41cf-92a3-f6582af4e2ec",
+								"exec": [
+									"// Test Status Code\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Test String in Body Content\r",
+									"pm.test(\"Body contains number selected - 1\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"1\");\r",
+									"});\r",
+									"\r",
+									"// Test Response Time\r",
+									"pm.test(\"Response time is less than 300ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});\r",
+									"\r",
+									"// Test Headers Properties\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/:number/:key",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								":number",
+								":key"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "1"
+								},
+								{
+									"key": "key",
+									"value": "trivia"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "date",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1e37a2f6-a23d-4ff9-a880-af5f0c4a0e6a",
+								"exec": [
+									"// Test Status Code\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Test String in Body Content\r",
+									"pm.test(\"Body contains date selected - 01/20\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"January 20th\");\r",
+									"});\r",
+									"\r",
+									"// Test Response Time\r",
+									"pm.test(\"Response time is less than 300ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});\r",
+									"\r",
+									"// Test Headers Properties\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/:number/:key",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								":number",
+								":key"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "01/20"
+								},
+								{
+									"key": "key",
+									"value": "date"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "year",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "77f4313c-047e-4ec7-9135-8e19f8d11732",
+								"exec": [
+									"// Test Status Code\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Test String in Body Content\r",
+									"pm.test(\"Body contains year selected - 100\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"100\");\r",
+									"});\r",
+									"\r",
+									"// Test Response Time\r",
+									"pm.test(\"Response time is less than 300ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});\r",
+									"\r",
+									"// Test Headers Properties\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/:number/:key",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								":number",
+								":key"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "100"
+								},
+								{
+									"key": "key",
+									"value": "year"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "math",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "aec1a409-a4bf-4340-8b52-955727382468",
+								"exec": [
+									"// Test Status Code\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Test String in Body Content\r",
+									"pm.test(\"Body contains number selected - 27\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"27\");\r",
+									"});\r",
+									"\r",
+									"// Test Response Time\r",
+									"pm.test(\"Response time is less than 300ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});\r",
+									"\r",
+									"// Test Headers Properties\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/:number/:key",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								":number",
+								":key"
+							],
+							"variable": [
+								{
+									"key": "number",
+									"value": "27"
+								},
+								{
+									"key": "key",
+									"value": "math"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
